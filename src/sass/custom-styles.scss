@@ -1,11 +1,10 @@
 @import 'configs/reset';
 @import 'configs/typographies';
 
-$app-background: #f7f7f7;
-
 .App{
 
   &, *{
+    box-sizing: border-box;
     transition: all 0.3s;
   }
 
@@ -18,7 +17,7 @@ $app-background: #f7f7f7;
   padding: 0px;
   margin: 0px;
 
-  background-color: $app-background;
+  text-align: center;
 
   @import 'components/CustomButton';
   @import 'components/CustomInput';

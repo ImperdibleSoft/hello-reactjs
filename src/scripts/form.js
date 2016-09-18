@@ -7,22 +7,78 @@ window.Form = React.createClass({
     };
   },
 
-
   /* Simulates a query to server */
-  handleSubmit: function(values){
-    /* Animates the button */
-    this.setState({
-      isSubmitting: true,
-    });
+  handleSubmit: function(e){
+    e.preventDefault();
 
-    setTimeout(function() {
+    /* Restart custom validations */
+    var errors = {};
+    this.state = {};
+
+    var _this = this;
+    var _nickname = document.querySelector('#nickname').value;
+    var _password = document.querySelector('#password').value;
+
+    /* Required validations */
+    if (_nickname.length <= 0) {
+      errors.nickname = true;
       this.setState({
-        isSubmitting: false,
+        'nickname': {
+          'error': 'Please, enter your nickname',
+        },
       });
-    }, 3000);
+    }
+    if (_password.length <= 0) {
+      errors.password = true;
+      this.setState({
+        'password': {
+          'error': 'Please, enter your password',
+        },
+      });
+    }
+
+    /* If no validation failures */
+    if (!errors.nickname && !errors.password) {
+
+      /* Start submission */
+      this.setState({
+        'isSubmitting': true,
+      });
+
+      /* Emulate an AJAX call */
+      setTimeout(function() {
+        /* AJAX call is completed */
+        _this.setState({
+          'isSubmitting': false,
+        });
+
+        /* Emulate basic auth success */
+        if (_nickname === 'hello' && _password === 'reactjs') {
+          alert('Success');
+
+        /* On error */
+        } else {
+          _this.setState({
+            error: 'Login failed',
+          });
+        }
+      }, 2000);
+    }
   },
 
+  /* Render the component */
   render: function(){
+
+    var nicknameData = {
+      id: 'nickname',
+      name: 'nickname',
+      label: 'Nickname',
+    };
+    var passwordData = {
+      id: 'password',
+      name: 'password',
+      label: 'Password',
+    };
 
     /* Render form */
     return (
@@ -37,14 +93,14 @@ window.Form = React.createClass({
         />
 
         <CustomInput
-          name="nickname"
-          label="Nickname"
+          data={ nicknameData }
+          field={ this.state.nickname }
         />
 
         <CustomInput
-          name="password"
-          label="Password"
           type="password"
+          data={ passwordData }
+          field={ this.state.password }
         />
 
         <CustomButton

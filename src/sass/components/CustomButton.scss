@@ -2,4 +2,25 @@
   position: relative;
   display: inline-block;
   float: left;
+
+  width: 100%;
+  padding: 10px 20px;
+  margin: 5px;
+
+  text-align: center;
+
+  background: #c3c3c3;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: darken(#c3c3c3, 15%);
+  }
+
+  &:disabled {
+    color: #ffffff;
+
+    background: darken(#c3c3c3, 10%);
+    cursor: not-allowed !important;
+  }
 }

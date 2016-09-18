@@ -5,14 +5,12 @@ window.FormError = React.createClass({
 
     /* If there is no error, render nothing */
     if (!this.props.message) {
-      return;
+      return <div></div>;
     }
 
     return (
       <div className="FormError">
-        <span className="FormError-message">
-          { this.props.message }
-        </span>
+        { this.props.message }
       </div>
     );
   }

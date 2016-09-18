@@ -1,5 +1,22 @@
 .CustomInput {
   position: relative;
-  display: inline-block;
+  display: block;
   float: left;
+
+  width: 100%;
+
+  clear: both;
+}
+
+.CustomInput-input {
+  position: relative;
+  display: block;
+  float: left;
+
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+
+  font-size: 16px;
+  line-height: 20px;
 }

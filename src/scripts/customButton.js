@@ -5,8 +5,9 @@ window.CustomButton = React.createClass({
 
     return(
       <button
-        className="Button"
+        className="CustomButton"
         type={ this.props.type || 'button' }
+        disabled={ this.props.isSubmitting }
       >
         { this.props.label }
       </button>
