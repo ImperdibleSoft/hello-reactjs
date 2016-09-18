@@ -1,0 +1,27 @@
+@import 'configs/reset';
+@import 'configs/typographies';
+
+$app-background: #f7f7f7;
+
+.App{
+
+  &, *{
+    transition: all 0.3s;
+  }
+
+  position: relative;
+  display: block;
+  float: left;
+
+  width: 100%;
+  min-height: 100%;
+  padding: 0px;
+  margin: 0px;
+
+  background-color: $app-background;
+
+  @import 'components/CustomButton';
+  @import 'components/CustomInput';
+  @import 'components/Form';
+  @import 'components/FormError';
+}

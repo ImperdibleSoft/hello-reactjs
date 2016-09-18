@@ -1,0 +1,30 @@
+{
+  "name": "SamyRoad",
+  "version": "1.0.0",
+  "description": "",
+  "authors": [
+    "Rafael Pérez García"
+  ],
+  "license": "ISC",
+  "main": "",
+  "moduleType": [],
+  "homepage": "app/index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "babel": "*",
+    "flux": "~2.1.1",
+    "marked": "^0.3.5",
+    "jquery": "^2.2.0",
+    "font-awesome": "^4.5.0",
+    "requirejs": "^2.1.22",
+    "react": "^0.14.7"
+  }
+}

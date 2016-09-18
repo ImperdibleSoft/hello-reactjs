@@ -1,0 +1,39 @@
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <title>Hello React</title>
+  <meta name="description" content="Small react test" />
+
+  <!-- Vendors CSS -->
+  <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css" />
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="./styles/custom-styles.css" />
+</head>
+<body>
+
+  <!-- React Application -->
+  <div id="mount-point"></div>
+
+  <!-- Vendors JS-->
+  <script type="text/javascript" src="./bower_components/react/react.js"></script>
+  <script type="text/javascript" src="./bower_components/react/react-dom.js"></script>
+  <script type="text/javascript" src="./bower_components/babel/browser.js"></script>
+  <script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="./bower_components/marked/marked.min.js"></script>
+  <script type="text/javascript" src="./bower_components/requirejs/require.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="./scripts/app.js"></script>
+  <script type="text/babel">
+    ReactDOM.render(
+      <App />,
+      document.getElementById('mount-point')
+    );
+  </script>
+
+</body>
+</html>
